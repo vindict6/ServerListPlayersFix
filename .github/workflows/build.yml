@@ -11,8 +11,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: windows-latest
-            name: Windows
+          # Windows dropped in this fork: it fails to link against the patched
+          # SDK (unrelated KeyValues3 externals) and BoneHost only runs Linux.
           - os: ubuntu-latest
             name: SteamRT3
             container: ghcr.io/source2ze/build-containers:steamrt3
