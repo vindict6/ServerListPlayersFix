@@ -38,8 +38,11 @@ jobs:
       - name: Checkout s2sdk
         uses: actions/checkout@v7
         with:
-          repository: alliedmodders/s2sdk
-          ref: cs2
+          # alliedmodders/s2sdk PR #128 (CS2 build 26879581 inserted a virtual
+          # into ISource2Server after GameCreateNetworkStringTables; GameFrame
+          # and every later slot moved by one).
+          repository: vindict6/hl2sdk-cs2
+          ref: ccd5b3e116864c0e7f6a0044046223cb772d33b7
           path: hl2sdk-cs2
 
       - name: Checkout AMBuild
